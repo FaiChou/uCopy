@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HistoryView: View {
     @FetchRequest(sortDescriptors: []) var history: FetchedResults<History>
@@ -31,17 +32,14 @@ struct HistoryView: View {
                     refreshID = UUID()
                 } catch {
                     let nserror = error as NSError
-                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                    print("Unresolved error \(nserror), \(nserror.userInfo)")
                 }
             }
             Button("Clear History") {
-                let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
-                let deleteReq = NSBatchDeleteRequest(fetchRequest: fetchReq)
-                do {
-                    try context.execute(deleteReq)
-                } catch {
-                    print("Errors on clear history")
+                for item in history {
+                    context.delete(item)
                 }
+                try? context.save()
             }
         }
     }
