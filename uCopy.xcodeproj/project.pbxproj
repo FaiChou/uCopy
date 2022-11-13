@@ -8,18 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		4D1ECFED291263D1009CBA22 /* uCopyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1ECFEC291263D1009CBA22 /* uCopyApp.swift */; };
-		4D1ECFEF291263D1009CBA22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1ECFEE291263D1009CBA22 /* ContentView.swift */; };
 		4D1ECFF1291263D2009CBA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1ECFF0291263D2009CBA22 /* Assets.xcassets */; };
 		4D1ECFF4291263D2009CBA22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1ECFF3291263D2009CBA22 /* Preview Assets.xcassets */; };
+		4DCB3410291D233B00E3B3CA /* uCopy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB340E291D233B00E3B3CA /* uCopy.xcdatamodeld */; };
+		4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3411291D23F300E3B3CA /* DataController.swift */; };
+		4DCB3437291E345C00E3B3CA /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3436291E345C00E3B3CA /* HistoryView.swift */; };
+		4DCB3439291FD97400E3B3CA /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3438291FD97400E3B3CA /* SettingView.swift */; };
+		4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9C4A52915FD0E002D6A34 /* Main.swift */; };
+		4DE9C4AB2916B345002D6A34 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 4DE9C4AA2916B345002D6A34 /* HotKey */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4D1ECFE9291263D1009CBA22 /* uCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1ECFEC291263D1009CBA22 /* uCopyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uCopyApp.swift; sourceTree = "<group>"; };
-		4D1ECFEE291263D1009CBA22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4D1ECFF0291263D2009CBA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D1ECFF3291263D2009CBA22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D1ECFF5291263D2009CBA22 /* uCopy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uCopy.entitlements; sourceTree = "<group>"; };
+		4DCB340F291D233B00E3B3CA /* uCopy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uCopy.xcdatamodel; sourceTree = "<group>"; };
+		4DCB3411291D23F300E3B3CA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		4DCB3436291E345C00E3B3CA /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		4DCB3438291FD97400E3B3CA /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		4DE9C4A52915FD0E002D6A34 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE9C4AB2916B345002D6A34 /* HotKey in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				4D1ECFEC291263D1009CBA22 /* uCopyApp.swift */,
-				4D1ECFEE291263D1009CBA22 /* ContentView.swift */,
+				4DCB3438291FD97400E3B3CA /* SettingView.swift */,
+				4DCB3436291E345C00E3B3CA /* HistoryView.swift */,
+				4DCB3411291D23F300E3B3CA /* DataController.swift */,
+				4DCB340E291D233B00E3B3CA /* uCopy.xcdatamodeld */,
+				4DE9C4A52915FD0E002D6A34 /* Main.swift */,
 				4D1ECFF0291263D2009CBA22 /* Assets.xcassets */,
 				4D1ECFF5291263D2009CBA22 /* uCopy.entitlements */,
 				4D1ECFF2291263D2009CBA22 /* Preview Content */,
@@ -85,6 +99,9 @@
 			dependencies = (
 			);
 			name = uCopy;
+			packageProductDependencies = (
+				4DE9C4AA2916B345002D6A34 /* HotKey */,
+			);
 			productName = uCopy;
 			productReference = 4D1ECFE9291263D1009CBA22 /* uCopy.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +130,9 @@
 				Base,
 			);
 			mainGroup = 4D1ECFE0291263D1009CBA22;
+			packageReferences = (
+				4DE9C4A92916B345002D6A34 /* XCRemoteSwiftPackageReference "HotKey" */,
+			);
 			productRefGroup = 4D1ECFEA291263D1009CBA22 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +159,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D1ECFEF291263D1009CBA22 /* ContentView.swift in Sources */,
+				4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */,
+				4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */,
+				4DCB3437291E345C00E3B3CA /* HistoryView.swift in Sources */,
+				4DCB3439291FD97400E3B3CA /* SettingView.swift in Sources */,
 				4D1ECFED291263D1009CBA22 /* uCopyApp.swift in Sources */,
+				4DCB3410291D233B00E3B3CA /* uCopy.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,11 +298,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faichou.uCopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,11 +327,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.faichou.uCopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -336,6 +364,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4DE9C4A92916B345002D6A34 /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4DE9C4AA2916B345002D6A34 /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4DE9C4A92916B345002D6A34 /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4DCB340E291D233B00E3B3CA /* uCopy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4DCB340F291D233B00E3B3CA /* uCopy.xcdatamodel */,
+			);
+			currentVersion = 4DCB340F291D233B00E3B3CA /* uCopy.xcdatamodel */;
+			path = uCopy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4D1ECFE1291263D1009CBA22 /* Project object */;
 }
