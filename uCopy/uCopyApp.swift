@@ -7,10 +7,16 @@
 
 import SwiftUI
 import HotKey
+import Combine
+import AVFoundation
 
 @main
 struct uCopyApp: App {
     @Environment(\.openWindow) var openWindow
+    let monitor = PasteboardMonitor()
+    let pub = NotificationCenter.default.publisher(for: .NSPasteboardDidChange)
+    @Environment(\.scenePhase) var scenePhase
+    @State var pasteboardMonitorCancellable: AnyCancellable?
 //    let hotKey = HotKey(key: .f, modifiers: [.command, .option], keyUpHandler:  {
 //        let menu = NSMenu(title: "Popup Menu")
 //        let labelItem = NSMenuItem(title: "labelItem", action: nil, keyEquivalent: "")
@@ -37,8 +43,17 @@ struct uCopyApp: App {
             }
             Divider()
             Button("Quit") {
+                monitor.terminate()
                 NSApplication.shared.terminate(nil)
             }.keyboardShortcut("q")
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .active {
+                self.pasteboardMonitorCancellable = pub.sink { n in
+                    // TODO: make user selectable
+                    NSSound(named: "Blow")?.play()
+                }
+            }
         }
     }
 }

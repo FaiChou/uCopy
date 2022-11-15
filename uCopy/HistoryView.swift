@@ -12,6 +12,7 @@ struct HistoryView: View {
     @FetchRequest(sortDescriptors: []) var history: FetchedResults<History>
     @Environment(\.managedObjectContext) var context
     @State private var refreshID = UUID()
+//    let pub = NotificationCenter.default.publisher(for: .NSPasteboardDidChange)
     var body: some View {
         VStack {
             ForEach(history.indices, id: \.self) { index in
@@ -42,5 +43,8 @@ struct HistoryView: View {
                 try? context.save()
             }
         }
+//        .onReceive(pub) { output in
+//            print("new item received")
+//        }
     }
 }

@@ -14,6 +14,7 @@
 		4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3411291D23F300E3B3CA /* DataController.swift */; };
 		4DCB3437291E345C00E3B3CA /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3436291E345C00E3B3CA /* HistoryView.swift */; };
 		4DCB3439291FD97400E3B3CA /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3438291FD97400E3B3CA /* SettingView.swift */; };
+		4DCB343B292228FF00E3B3CA /* PasteboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB343A292228FF00E3B3CA /* PasteboardMonitor.swift */; };
 		4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9C4A52915FD0E002D6A34 /* Main.swift */; };
 		4DE9C4AB2916B345002D6A34 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 4DE9C4AA2916B345002D6A34 /* HotKey */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		4DCB3411291D23F300E3B3CA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		4DCB3436291E345C00E3B3CA /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		4DCB3438291FD97400E3B3CA /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		4DCB343A292228FF00E3B3CA /* PasteboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardMonitor.swift; sourceTree = "<group>"; };
 		4DE9C4A52915FD0E002D6A34 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				4D1ECFEC291263D1009CBA22 /* uCopyApp.swift */,
+				4DCB343A292228FF00E3B3CA /* PasteboardMonitor.swift */,
 				4DCB3438291FD97400E3B3CA /* SettingView.swift */,
 				4DCB3436291E345C00E3B3CA /* HistoryView.swift */,
 				4DCB3411291D23F300E3B3CA /* DataController.swift */,
@@ -159,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCB343B292228FF00E3B3CA /* PasteboardMonitor.swift in Sources */,
 				4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */,
 				4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */,
 				4DCB3437291E345C00E3B3CA /* HistoryView.swift in Sources */,
