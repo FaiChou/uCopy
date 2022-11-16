@@ -7,10 +7,24 @@
 
 import SwiftUI
 
-struct SettingView: View {
+struct SettingsView: View {
+    private enum Tabs: Hashable {
+        case general, advanced
+    }
     var body: some View {
-        Text("Hello, World!")
-            .frame(width: 100, height: 100)
+        TabView {
+            GeneralSettingsView()
+                .tabItem {
+                    Label("General", systemImage: "gear")
+                }
+                .tag(Tabs.general)
+            AdvancedSettingsView()
+                .tabItem {
+                    Label("Advanced", systemImage: "star")
+                }
+                .tag(Tabs.advanced)
+        }
+        .padding(20)
+        .frame(width: 375, height: 150)
     }
 }
-

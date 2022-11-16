@@ -16,6 +16,10 @@ struct uCopyApp: App {
     let monitor = PasteboardMonitor()
     let pub = NotificationCenter.default.publisher(for: .NSPasteboardDidChange)
     @Environment(\.scenePhase) var scenePhase
+    
+    @AppStorage("uCopy.sound")
+    private var sound: SoundNames = .blow
+
     @State var pasteboardMonitorCancellable: AnyCancellable?
 //    let hotKey = HotKey(key: .f, modifiers: [.command, .option], keyUpHandler:  {
 //        let menu = NSMenu(title: "Popup Menu")
@@ -28,7 +32,7 @@ struct uCopyApp: App {
     var body: some Scene {
         MainScene()
         Settings {
-          SettingView()
+            SettingsView()
         }
         MenuBarExtra("Menu Bar", systemImage: "swift") {
             HistoryView()
@@ -36,7 +40,7 @@ struct uCopyApp: App {
             Button("Perferences...") {
                 NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
                 for window in NSApplication.shared.windows {
-                    if window.title == "uCopy Settings" {
+                    if window.title == "General" {
                         window.level = .floating
                     }
                 }
@@ -51,7 +55,7 @@ struct uCopyApp: App {
             if phase == .active {
                 self.pasteboardMonitorCancellable = pub.sink { n in
                     // TODO: make user selectable
-                    NSSound(named: "Blow")?.play()
+                    NSSound(named: sound.rawValue.capitalized)?.play()
                 }
             }
         }
