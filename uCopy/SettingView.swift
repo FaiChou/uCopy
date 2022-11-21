@@ -18,6 +18,11 @@ struct SettingsView: View {
                     Label("General", systemImage: "gear")
                 }
                 .tag(Tabs.general)
+//            PasteTypeSettingsView()
+//                .tabItem {
+//                    Label("Type", systemImage: "doc")
+//                }
+//                .tag(Tabs.general)
             AdvancedSettingsView()
                 .tabItem {
                     Label("Advanced", systemImage: "star")

@@ -12,7 +12,6 @@ import AVFoundation
 
 @main
 struct uCopyApp: App {
-    @Environment(\.openWindow) var openWindow
     let monitor = PasteboardMonitor()
     let pub = NotificationCenter.default.publisher(for: .NSPasteboardDidChange)
     @Environment(\.scenePhase) var scenePhase
@@ -40,7 +39,7 @@ struct uCopyApp: App {
             Button("Perferences...") {
                 NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
                 for window in NSApplication.shared.windows {
-                    if window.title == "General" {
+                    if window.title == "General" || window.title == "Type" || window.title == "Advanced" {
                         window.level = .floating
                     }
                 }
@@ -54,8 +53,22 @@ struct uCopyApp: App {
         .onChange(of: scenePhase) { phase in
             if phase == .active {
                 self.pasteboardMonitorCancellable = pub.sink { n in
-                    // TODO: make user selectable
+                    guard let data = n.userInfo?["data"] as? PasteboardData else {
+                        return
+                    }
                     NSSound(named: sound.rawValue.capitalized)?.play()
+                    let context = dataController.container.viewContext
+                    let item = History(context: context)
+                    item.id = UUID()
+                    item.title = data.string
+                    item.source = data.source
+                    item.createDate = data.createDate
+                    do {
+                        try context.save()
+                    } catch {
+                        let nserror = error as NSError
+                        print("Unresolved error \(nserror), \(nserror.userInfo)")
+                    }
                 }
             }
         }

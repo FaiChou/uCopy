@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct GeneralSettingsView: View {
     @AppStorage("uCopy.sound")
