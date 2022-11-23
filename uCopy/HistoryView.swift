@@ -30,26 +30,28 @@ struct HistoryView: View {
                 if (index < 9) {
                     let key = KeyEquivalent(Character(UnicodeScalar(0x0030+indexToShow)!))
                     Button("\(indexToShow). \(title.trunc(length: 30))") {
-                        print(title)
-                        PasteService.writeToPasteboard(with: title)
-                        PasteService.paste()
+                        self.paste(history[index])
                     }
                     .keyboardShortcut(key)
                 } else {
                     Button("\(indexToShow). \(title.trunc(length: 30))") {
-                        print(title)
-                        PasteService.writeToPasteboard(with: title)
-                        PasteService.paste()
+                        self.paste(history[index])
                     }
                 }
             }.id(refreshID)
             Divider()
             Button("Clear History") {
-                for item in history {
-                    context.delete(item)
-                }
-                try? context.save()
+                let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
+                let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+                try? context.executeAndMergeChanges(using: batchDeleteRequest)
             }
         }
+    }
+    func paste(_ item: History) {
+        let string = item.title ?? ""
+        PasteService.writeToPasteboard(with: string)
+        PasteService.paste()
+        context.delete(item)
+        try? context.save()
     }
 }
