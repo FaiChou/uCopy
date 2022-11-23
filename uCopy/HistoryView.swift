@@ -30,11 +30,13 @@ struct HistoryView: View {
                 if (index < 9) {
                     Button("\(indexToShow). \(title.trunc(length: 30))") {
                         print(title)
+                        PasteService.paste()
                     }
                     .keyboardShortcut(KeyEquivalent(Character(UnicodeScalar(0x0030+indexToShow)!)))
                 } else {
                     Button("\(indexToShow). \(title.trunc(length: 30))") {
                         print(title)
+                        PasteService.paste()
                     }
                 }
             }.id(refreshID)

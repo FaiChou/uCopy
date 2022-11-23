@@ -18,6 +18,7 @@
 		4DCB343D2924B4BA00E3B3CA /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB343C2924B4BA00E3B3CA /* GeneralSettingsView.swift */; };
 		4DCB343F2924B4C600E3B3CA /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB343E2924B4C600E3B3CA /* AdvancedSettingsView.swift */; };
 		4DCB3443292B757C00E3B3CA /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3442292B757C00E3B3CA /* UtilityExtensions.swift */; };
+		4DCB3445292DC67500E3B3CA /* PasteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3444292DC67500E3B3CA /* PasteService.swift */; };
 		4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9C4A52915FD0E002D6A34 /* Main.swift */; };
 		4DE9C4AB2916B345002D6A34 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 4DE9C4AA2916B345002D6A34 /* HotKey */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		4DCB343C2924B4BA00E3B3CA /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		4DCB343E2924B4C600E3B3CA /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
 		4DCB3442292B757C00E3B3CA /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
+		4DCB3444292DC67500E3B3CA /* PasteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteService.swift; sourceTree = "<group>"; };
 		4DE9C4A52915FD0E002D6A34 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 			children = (
 				4D1ECFEC291263D1009CBA22 /* uCopyApp.swift */,
 				4DCB343A292228FF00E3B3CA /* PasteboardMonitor.swift */,
+				4DCB3444292DC67500E3B3CA /* PasteService.swift */,
 				4DCB3438291FD97400E3B3CA /* SettingView.swift */,
 				4DCB343E2924B4C600E3B3CA /* AdvancedSettingsView.swift */,
 				4DCB343C2924B4BA00E3B3CA /* GeneralSettingsView.swift */,
@@ -174,6 +177,7 @@
 				4DCB343B292228FF00E3B3CA /* PasteboardMonitor.swift in Sources */,
 				4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */,
 				4DCB343F2924B4C600E3B3CA /* AdvancedSettingsView.swift in Sources */,
+				4DCB3445292DC67500E3B3CA /* PasteService.swift in Sources */,
 				4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */,
 				4DCB3437291E345C00E3B3CA /* HistoryView.swift in Sources */,
 				4DCB3439291FD97400E3B3CA /* SettingView.swift in Sources */,
@@ -306,6 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = uCopy/uCopy.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -335,6 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = uCopy/uCopy.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
