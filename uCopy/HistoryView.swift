@@ -28,14 +28,17 @@ struct HistoryView: View {
                 let title = history[index].title ?? "Unknown"
                 let indexToShow = index + 1
                 if (index < 9) {
+                    let key = KeyEquivalent(Character(UnicodeScalar(0x0030+indexToShow)!))
                     Button("\(indexToShow). \(title.trunc(length: 30))") {
                         print(title)
+                        PasteService.writeToPasteboard(with: title)
                         PasteService.paste()
                     }
-                    .keyboardShortcut(KeyEquivalent(Character(UnicodeScalar(0x0030+indexToShow)!)))
+                    .keyboardShortcut(key)
                 } else {
                     Button("\(indexToShow). \(title.trunc(length: 30))") {
                         print(title)
+                        PasteService.writeToPasteboard(with: title)
                         PasteService.paste()
                     }
                 }

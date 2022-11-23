@@ -7,9 +7,10 @@
 
 import Foundation
 import CoreGraphics
+import AppKit
 
 class PasteService {
-    static func paste () {
+    static func paste() {
 //        let source = CGEventSource(stateID: .combinedSessionState)
         let event1 = CGEvent(keyboardEventSource: nil, virtualKey: 0x09, keyDown: true); // cmd-v down
         event1?.flags = CGEventFlags.maskCommand;
@@ -18,7 +19,7 @@ class PasteService {
     //    event2?.flags = CGEventFlags.maskCommand
         event2?.post(tap: CGEventTapLocation.cghidEventTap)
     }
-    static func pasteMatchStyle () { // opt-shift-cmd-v
+    static func pasteMatchStyle() { // opt-shift-cmd-v
         let event1 = CGEvent(keyboardEventSource: nil, virtualKey: 0x09, keyDown: true); // opt-shft-cmd-v down
         event1?.flags = [CGEventFlags.maskCommand, CGEventFlags.maskShift, CGEventFlags.maskAlternate]
         event1?.post(tap: CGEventTapLocation.cghidEventTap);
@@ -26,7 +27,7 @@ class PasteService {
      //   event2?.flags = [CGEventFlags.maskCommand, CGEventFlags.maskShift, CGEventFlags.maskAlternate]
         event2?.post(tap: CGEventTapLocation.cghidEventTap);
     }
-    static func pasteResults () { // shift-cmd-v
+    static func pasteResults() { // shift-cmd-v
         let event1 = CGEvent(keyboardEventSource: nil, virtualKey: 0x09, keyDown: true); // shft-cmd-v down
         event1?.flags = [CGEventFlags.maskCommand, CGEventFlags.maskShift]
         event1?.post(tap: CGEventTapLocation.cghidEventTap);
@@ -61,12 +62,17 @@ class PasteService {
         //    event2?.flags = CGEventFlags.maskCommand;
         event2?.post(tap: CGEventTapLocation.cghidEventTap);
     }
-    static func pastesSyle() { // option-cmd-v
+    static func pastesStyle() { // option-cmd-v
         let event1 = CGEvent(keyboardEventSource: nil, virtualKey: 0x07, keyDown: true); // opt-cmd-v down
         event1?.flags = [CGEventFlags.maskCommand, CGEventFlags.maskAlternate];
         event1?.post(tap: CGEventTapLocation.cghidEventTap);
         let event2 = CGEvent(keyboardEventSource: nil, virtualKey: 0x07, keyDown: false); // opt-cmd-v up
         //    event2?.flags = CGEventFlags.maskCommand;
         event2?.post(tap: CGEventTapLocation.cghidEventTap);
+    }
+    static func writeToPasteboard(with string: String) {
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
+        pasteboard.setString(string, forType: .string)
     }
 }
