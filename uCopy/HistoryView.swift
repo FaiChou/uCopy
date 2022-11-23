@@ -9,12 +9,23 @@ import SwiftUI
 import CoreData
 
 struct HistoryView: View {
-    @FetchRequest(sortDescriptors: []) var history: FetchedResults<History>
+//    @FetchRequest(sortDescriptors: [SortDescriptor(\.createDate, order: .reverse)]) var history: FetchedResults<History>
+    @FetchRequest(fetchRequest: HistoryView.fetchRequestWithLimit(size: 20)) var history: FetchedResults<History>
     @Environment(\.managedObjectContext) var context
     @State private var refreshID = UUID()
+
+    static func fetchRequestWithLimit(size: Int) -> NSFetchRequest<History> {
+        let r: NSFetchRequest<History> = History.fetchRequest()
+        r.sortDescriptors = [
+            NSSortDescriptor(keyPath: \History.createDate, ascending: false)
+        ]
+        r.fetchLimit = size
+        return r
+    }
+
     var body: some View {
         VStack {
-            ForEach(history.indices, id: \.self) { index in
+            ForEach(history.indices.prefix(20), id: \.self) { index in
                 let title = history[index].title ?? "Unknown"
                 Button("\(index+1). \(title.trunc(length: 30))") {
                     print(title)
