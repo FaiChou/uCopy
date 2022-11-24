@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import HotKey
 import Combine
 import AVFoundation
 
@@ -52,6 +51,8 @@ struct uCopyApp: App {
         }
         .onChange(of: scenePhase) { phase in
             if phase == .active {
+                AccessibilityService.isAccessibilityEnabled(isPrompt: true)
+                HotKeyService.setup()
                 self.pasteboardMonitorCancellable = pub.sink { n in
                     guard let data = n.userInfo?["data"] as? PasteboardData else {
                         return

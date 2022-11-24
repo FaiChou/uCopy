@@ -9,18 +9,9 @@ import SwiftUI
 import CoreData
 
 struct HistoryView: View {
-    @FetchRequest(fetchRequest: HistoryView.fetchRequestWithLimit(size: 20)) var history: FetchedResults<History>
+    @FetchRequest(fetchRequest: CoreDataHelper.historyFetchRequestWithLimit(size: 20)) var history: FetchedResults<History>
     @Environment(\.managedObjectContext) var context
     @State private var refreshID = UUID()
-
-    static func fetchRequestWithLimit(size: Int) -> NSFetchRequest<History> {
-        let r: NSFetchRequest<History> = History.fetchRequest()
-        r.sortDescriptors = [
-            NSSortDescriptor(keyPath: \History.createDate, ascending: false)
-        ]
-        r.fetchLimit = size
-        return r
-    }
 
     var body: some View {
         VStack {
@@ -49,6 +40,7 @@ struct HistoryView: View {
     }
     func paste(_ item: History) {
         let string = item.title ?? ""
+        print(string)
         PasteService.writeToPasteboard(with: string)
         PasteService.paste()
         context.delete(item)

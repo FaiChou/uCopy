@@ -19,6 +19,9 @@
 		4DCB343F2924B4C600E3B3CA /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB343E2924B4C600E3B3CA /* AdvancedSettingsView.swift */; };
 		4DCB3443292B757C00E3B3CA /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3442292B757C00E3B3CA /* UtilityExtensions.swift */; };
 		4DCB3445292DC67500E3B3CA /* PasteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3444292DC67500E3B3CA /* PasteService.swift */; };
+		4DCB3447292E0F1000E3B3CA /* AccessibilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3446292E0F1000E3B3CA /* AccessibilityService.swift */; };
+		4DCB3449292E12A500E3B3CA /* HotKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3448292E12A500E3B3CA /* HotKeyService.swift */; };
+		4DCB344B292E211500E3B3CA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB344A292E211500E3B3CA /* CoreDataHelper.swift */; };
 		4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9C4A52915FD0E002D6A34 /* Main.swift */; };
 		4DE9C4AB2916B345002D6A34 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 4DE9C4AA2916B345002D6A34 /* HotKey */; };
 /* End PBXBuildFile section */
@@ -38,6 +41,9 @@
 		4DCB343E2924B4C600E3B3CA /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
 		4DCB3442292B757C00E3B3CA /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
 		4DCB3444292DC67500E3B3CA /* PasteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteService.swift; sourceTree = "<group>"; };
+		4DCB3446292E0F1000E3B3CA /* AccessibilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityService.swift; sourceTree = "<group>"; };
+		4DCB3448292E12A500E3B3CA /* HotKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyService.swift; sourceTree = "<group>"; };
+		4DCB344A292E211500E3B3CA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		4DE9C4A52915FD0E002D6A34 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +85,9 @@
 				4DCB343E2924B4C600E3B3CA /* AdvancedSettingsView.swift */,
 				4DCB343C2924B4BA00E3B3CA /* GeneralSettingsView.swift */,
 				4DCB3436291E345C00E3B3CA /* HistoryView.swift */,
+				4DCB344A292E211500E3B3CA /* CoreDataHelper.swift */,
+				4DCB3446292E0F1000E3B3CA /* AccessibilityService.swift */,
+				4DCB3448292E12A500E3B3CA /* HotKeyService.swift */,
 				4DCB3442292B757C00E3B3CA /* UtilityExtensions.swift */,
 				4DCB3411291D23F300E3B3CA /* DataController.swift */,
 				4DCB340E291D233B00E3B3CA /* uCopy.xcdatamodeld */,
@@ -176,12 +185,15 @@
 			files = (
 				4DCB343B292228FF00E3B3CA /* PasteboardMonitor.swift in Sources */,
 				4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */,
+				4DCB3447292E0F1000E3B3CA /* AccessibilityService.swift in Sources */,
+				4DCB3449292E12A500E3B3CA /* HotKeyService.swift in Sources */,
 				4DCB343F2924B4C600E3B3CA /* AdvancedSettingsView.swift in Sources */,
 				4DCB3445292DC67500E3B3CA /* PasteService.swift in Sources */,
 				4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */,
 				4DCB3437291E345C00E3B3CA /* HistoryView.swift in Sources */,
 				4DCB3439291FD97400E3B3CA /* SettingView.swift in Sources */,
 				4D1ECFED291263D1009CBA22 /* uCopyApp.swift in Sources */,
+				4DCB344B292E211500E3B3CA /* CoreDataHelper.swift in Sources */,
 				4DCB343D2924B4BA00E3B3CA /* GeneralSettingsView.swift in Sources */,
 				4DCB3443292B757C00E3B3CA /* UtilityExtensions.swift in Sources */,
 				4DCB3410291D233B00E3B3CA /* uCopy.xcdatamodeld in Sources */,

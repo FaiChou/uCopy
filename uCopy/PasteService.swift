@@ -11,6 +11,10 @@ import AppKit
 
 class PasteService {
     static func paste() {
+        guard AccessibilityService.isAccessibilityEnabled(isPrompt: false) else {
+            AccessibilityService.showAccessibilityAuthenticationAlert()
+            return
+        }
 //        let source = CGEventSource(stateID: .combinedSessionState)
         let event1 = CGEvent(keyboardEventSource: nil, virtualKey: 0x09, keyDown: true); // cmd-v down
         event1?.flags = CGEventFlags.maskCommand;
