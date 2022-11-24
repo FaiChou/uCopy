@@ -15,7 +15,6 @@ class PasteService {
             AccessibilityService.showAccessibilityAuthenticationAlert()
             return
         }
-//        let source = CGEventSource(stateID: .combinedSessionState)
         let event1 = CGEvent(keyboardEventSource: nil, virtualKey: 0x09, keyDown: true); // cmd-v down
         event1?.flags = CGEventFlags.maskCommand;
         event1?.post(tap: CGEventTapLocation.cghidEventTap);

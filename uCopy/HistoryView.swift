@@ -20,12 +20,12 @@ struct HistoryView: View {
                 let indexToShow = index + 1
                 if (index < 9) {
                     let key = KeyEquivalent(Character(UnicodeScalar(0x0030+indexToShow)!))
-                    Button("\(indexToShow). \(title.trunc(length: 30))") {
+                    Button("\(indexToShow). \(title.trimingLeadingSpaces().trunc(length: 30))") {
                         self.paste(history[index])
                     }
                     .keyboardShortcut(key)
                 } else {
-                    Button("\(indexToShow). \(title.trunc(length: 30))") {
+                    Button("\(indexToShow). \(title.trimingLeadingSpaces().trunc(length: 30))") {
                         self.paste(history[index])
                     }
                 }
@@ -40,7 +40,6 @@ struct HistoryView: View {
     }
     func paste(_ item: History) {
         let string = item.title ?? ""
-        print(string)
         PasteService.writeToPasteboard(with: string)
         PasteService.paste()
         context.delete(item)

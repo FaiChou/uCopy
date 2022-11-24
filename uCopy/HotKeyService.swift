@@ -14,7 +14,7 @@ class HotKeyService {
     static func setup() {
         clipboardHistoryHotKey = HotKey(keyCombo: KeyCombo(key: .c, modifiers: [.command, .option]))
         clipboardHistoryHotKey?.keyDownHandler = {
-            print("todo")
+            MenuManager.popupHistoryMenu()
         }
     }
 }

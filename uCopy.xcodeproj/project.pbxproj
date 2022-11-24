@@ -22,6 +22,7 @@
 		4DCB3447292E0F1000E3B3CA /* AccessibilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3446292E0F1000E3B3CA /* AccessibilityService.swift */; };
 		4DCB3449292E12A500E3B3CA /* HotKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3448292E12A500E3B3CA /* HotKeyService.swift */; };
 		4DCB344B292E211500E3B3CA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB344A292E211500E3B3CA /* CoreDataHelper.swift */; };
+		4DCB344D292F1EFE00E3B3CA /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB344C292F1EFE00E3B3CA /* MenuManager.swift */; };
 		4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9C4A52915FD0E002D6A34 /* Main.swift */; };
 		4DE9C4AB2916B345002D6A34 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 4DE9C4AA2916B345002D6A34 /* HotKey */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		4DCB3446292E0F1000E3B3CA /* AccessibilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityService.swift; sourceTree = "<group>"; };
 		4DCB3448292E12A500E3B3CA /* HotKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyService.swift; sourceTree = "<group>"; };
 		4DCB344A292E211500E3B3CA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		4DCB344C292F1EFE00E3B3CA /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 		4DE9C4A52915FD0E002D6A34 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				4D1ECFEC291263D1009CBA22 /* uCopyApp.swift */,
+				4DCB344C292F1EFE00E3B3CA /* MenuManager.swift */,
 				4DCB343A292228FF00E3B3CA /* PasteboardMonitor.swift */,
 				4DCB3444292DC67500E3B3CA /* PasteService.swift */,
 				4DCB3438291FD97400E3B3CA /* SettingView.swift */,
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCB344D292F1EFE00E3B3CA /* MenuManager.swift in Sources */,
 				4DCB343B292228FF00E3B3CA /* PasteboardMonitor.swift in Sources */,
 				4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */,
 				4DCB3447292E0F1000E3B3CA /* AccessibilityService.swift in Sources */,

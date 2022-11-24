@@ -53,6 +53,7 @@ struct uCopyApp: App {
             if phase == .active {
                 AccessibilityService.isAccessibilityEnabled(isPrompt: true)
                 HotKeyService.setup()
+                MenuManager.moc = dataController.container.viewContext
                 self.pasteboardMonitorCancellable = pub.sink { n in
                     guard let data = n.userInfo?["data"] as? PasteboardData else {
                         return
