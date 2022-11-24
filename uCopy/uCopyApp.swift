@@ -33,7 +33,7 @@ struct uCopyApp: App {
                         window.level = .floating
                     }
                 }
-            }
+            }.keyboardShortcut(",")
             Divider()
             Button("Quit") {
                 monitor.terminate()
