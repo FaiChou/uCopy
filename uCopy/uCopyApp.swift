@@ -14,18 +14,9 @@ struct uCopyApp: App {
     let monitor = PasteboardMonitor()
     let pub = NotificationCenter.default.publisher(for: .NSPasteboardDidChange)
     @Environment(\.scenePhase) var scenePhase
-    
     @AppStorage("uCopy.sound")
     private var sound: SoundNames = .blow
-
     @State var pasteboardMonitorCancellable: AnyCancellable?
-//    let hotKey = HotKey(key: .f, modifiers: [.command, .option], keyUpHandler:  {
-//        let menu = NSMenu(title: "Popup Menu")
-//        let labelItem = NSMenuItem(title: "labelItem", action: nil, keyEquivalent: "")
-//        labelItem.isEnabled = false
-//        menu.addItem(labelItem)
-//        menu.popUp(positioning: nil, at: NSEvent.mouseLocation, in: nil)
-//    })
     @StateObject private var dataController = DataController()
     var body: some Scene {
         MainScene()
