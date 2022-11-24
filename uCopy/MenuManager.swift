@@ -31,6 +31,7 @@ class MenuManager {
                 )
                 menuItem.target = MenuManager.self
                 menuItem.representedObject = item
+                menuItem.toolTip = string // we should use the original formateed string
                 historyMenu!.addItem(menuItem)
             }
         } catch {
