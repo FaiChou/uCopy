@@ -17,4 +17,11 @@ class CoreDataHelper {
         r.fetchLimit = size
         return r
     }
+    static func snippetFetchRequest() -> NSFetchRequest<Snippet> {
+        let r: NSFetchRequest<Snippet> = Snippet.fetchRequest()
+        r.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Snippet.createDate, ascending: true)
+        ]
+        return r
+    }
 }

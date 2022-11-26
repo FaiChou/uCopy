@@ -10,11 +10,16 @@ import HotKey
 
 class HotKeyService {
     static var clipboardHistoryHotKey: HotKey?
-//    static var snippetsHotKey: HotKey?
+    static var snippetsHotKey: HotKey?
     static func setup() {
         clipboardHistoryHotKey = HotKey(keyCombo: KeyCombo(key: .c, modifiers: [.command, .option]))
         clipboardHistoryHotKey?.keyDownHandler = {
             MenuManager.popupHistoryMenu()
         }
+        snippetsHotKey = HotKey(keyCombo: KeyCombo(key: .x, modifiers: [.command, .option]))
+        snippetsHotKey?.keyDownHandler = {
+            MenuManager.popupSnippetMenu()
+        }
     }
 }
+

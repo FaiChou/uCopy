@@ -22,6 +22,7 @@ struct uCopyApp: App {
         MainScene()
         Settings {
             SettingsView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
         MenuBarExtra("Menu Bar", systemImage: "swift") {
             HistoryView()

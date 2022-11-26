@@ -13,6 +13,7 @@ class MenuManager {
     static var historyMenu: NSMenu?
     static var snippetMenu: NSMenu?
     static var historyResults: [History]? = [History]()
+    static var snippetResults: [Snippet]? = [Snippet]()
     static func popupHistoryMenu() {
         historyMenu = NSMenu(title: "HistoryMenu")
         let labelItem = NSMenuItem(title: "History", action: nil, keyEquivalent: "")
@@ -39,13 +40,44 @@ class MenuManager {
         }
         historyMenu!.popUp(positioning: nil, at: NSEvent.mouseLocation, in: nil)
     }
+    static func popupSnippetMenu() {
+        snippetMenu = NSMenu(title: "SnippetMenu")
+        let labelItem = NSMenuItem(title: "Snippet", action: nil, keyEquivalent: "")
+        labelItem.isEnabled = false
+        snippetMenu!.addItem(labelItem)
+        do {
+            snippetResults = try moc?.fetch(CoreDataHelper.snippetFetchRequest())
+            for (index, item) in snippetResults!.enumerated() {
+                let string = item.name ?? ""
+                let title = "\(index+1). \(string.trimingLeadingSpaces().trunc(length: 30))"
+                let key = index < 9 ? String(index+1) : ""
+                let menuItem = NSMenuItem(
+                    title: title,
+                    action: #selector(paste),
+                    keyEquivalent: key
+                )
+                menuItem.target = MenuManager.self
+                menuItem.representedObject = item
+                menuItem.toolTip = string // we should use the original formateed string
+                snippetMenu!.addItem(menuItem)
+            }
+        } catch {
+            print("Something wrong!")
+        }
+        snippetMenu!.popUp(positioning: nil, at: NSEvent.mouseLocation, in: nil)
+    }
     @objc
     static func paste(_ sender: NSMenuItem) {
-        let item = sender.representedObject as! History
-        let string = item.title ?? ""
-        PasteService.writeToPasteboard(with: string)
-        PasteService.paste()
-        moc?.delete(item)
+        if let h = sender.representedObject as? History {
+            let string = h.title ?? ""
+            PasteService.writeToPasteboard(with: string)
+            PasteService.paste()
+            moc?.delete(h)
+        } else if let s = sender.representedObject as? Snippet {
+            let string = s.content ?? ""
+            PasteService.writeToPasteboard(with: string)
+            PasteService.paste()
+        }
         try? moc?.save()
     }
 }
