@@ -29,7 +29,7 @@ struct SnippetSettingsView: View {
                 HStack {
                     Button {
                         let newAddedItem = add(name: "New", content: "")
-                        selection = newAddedItem
+                        selection = .none
                         refreshID = UUID()
                     } label: {
                         Image(systemName: "plus.rectangle.fill")
