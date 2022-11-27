@@ -18,17 +18,13 @@ struct SnippetSettingsView: View {
             VStack {
                 List(snippets, id: \.self, selection: $selection) { item in
                     NavigationLink(item.name!) {
-                        if selection != nil {
-                            SnippetEditView(item: item)
-                        } else {
-                            Text("Pick a node")
-                        }
+                        SnippetEditView(item: item)
                     }
                 }
                 .listStyle(.inset(alternatesRowBackgrounds: true))
                 HStack {
                     Button {
-                        let newAddedItem = add(name: "New", content: "")
+                        add(name: "New", content: "")
                         selection = .none
                         refreshID = UUID()
                     } label: {
@@ -53,6 +49,7 @@ struct SnippetSettingsView: View {
         context.delete(item)
         try? context.save()
     }
+    @discardableResult
     func add(name: String, content: String) -> Snippet {
         let item = Snippet(context: context)
         item.id = UUID()
