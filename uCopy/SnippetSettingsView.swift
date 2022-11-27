@@ -12,6 +12,7 @@ struct SnippetSettingsView: View {
     @FetchRequest(fetchRequest: CoreDataHelper.snippetFetchRequest()) var snippets: FetchedResults<Snippet>
     @Environment(\.managedObjectContext) var context
     @State private var selection: Snippet?
+    @State private var refreshID = UUID()
     var body: some View {
         NavigationView {
             VStack {
@@ -27,7 +28,9 @@ struct SnippetSettingsView: View {
                 .listStyle(.inset(alternatesRowBackgrounds: true))
                 HStack {
                     Button {
-                        add(name: "New", content: "")
+                        let newAddedItem = add(name: "New", content: "")
+                        selection = newAddedItem
+                        refreshID = UUID()
                     } label: {
                         Image(systemName: "plus.rectangle.fill")
                     }
@@ -35,6 +38,8 @@ struct SnippetSettingsView: View {
                         if let item = selection {
                             delete(item: item)
                         }
+                        selection = .none
+                        refreshID = UUID()
                     } label: {
                         Image(systemName: "minus.rectangle.fill")
                     }
@@ -48,12 +53,13 @@ struct SnippetSettingsView: View {
         context.delete(item)
         try? context.save()
     }
-    func add(name: String, content: String) {
+    func add(name: String, content: String) -> Snippet {
         let item = Snippet(context: context)
         item.id = UUID()
         item.name = name
         item.content = content
         item.createDate = Date.now
         try? context.save()
+        return item
     }
 }
