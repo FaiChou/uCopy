@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  uCopy
+
+  Created by 周辉 on 2022/11/28.
+  
+*/
+
+"Perferences..." = "Perferences...";
+"General" = "General";
+"Snippet" = "Snippet";
+"About" = "About";
+"Quit" = "Quit";
+"History" = "History";
+"Snippet" = "Snippet";
+"New" = "New";
+"Pick a node" = "Pick a node";
+"Name" = "Name";
+"Name, Required" = "Name, Required";
+"Launch at login" = "Launch at login";
+"Sound" = "Sound";
+"Unknown" = "Unknown";
+"Clear History" = "Clear History";
+
+"Please allow Accessibility" = "Please allow Accessibility";
+
+"To do this action please allow Accessibility in Security Privacy preferences located in System Preferences" = "To do this action please allow Accessibility in Security & Privacy preferences, located in System Preferences";
+
+"Open System Preferences" = "Open System Preferences";

@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  uCopy
+
+  Created by 周辉 on 2022/11/28.
+  
+*/
+"Perferences..." = "设置";
+"General" = "通用";
+"Snippet" = "短语片段";
+"About" = "关于";
+"Quit" = "退出";
+"History" = "历史粘贴板";
+"New" = "新建";
+"Pick a node" = "选择一条编辑";
+"Name" = "名称";
+"Name, Required" = "名称";
+"Launch at login" = "开机启动";
+"Sound" = "提示音";
+"Unknown" = "未知";
+"Clear History" = "清除历史";
+
+"Please allow Accessibility" = "请打开 Accessibility";
+
+"To do this action please allow Accessibility in Security Privacy preferences located in System Preferences" = "请在设置中打开 Accessibility 权限";
+
+"Open System Preferences" = "打开设置";

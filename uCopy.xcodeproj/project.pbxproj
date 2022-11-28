@@ -12,6 +12,7 @@
 		4D1ECFF4291263D2009CBA22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1ECFF3291263D2009CBA22 /* Preview Assets.xcassets */; };
 		4D6124FC29324ABE0044E63C /* SnippetEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6124FB29324ABE0044E63C /* SnippetEditView.swift */; };
 		4D6124FF293490CC0044E63C /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 4D6124FE293490CC0044E63C /* LaunchAtLogin */; };
+		4D6125042934A19E0044E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D6125062934A19E0044E63C /* Localizable.strings */; };
 		4D805D8829321A25009F4F52 /* SnippetSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D805D8729321A25009F4F52 /* SnippetSettingsView.swift */; };
 		4DCB3410291D233B00E3B3CA /* uCopy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB340E291D233B00E3B3CA /* uCopy.xcdatamodeld */; };
 		4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3411291D23F300E3B3CA /* DataController.swift */; };
@@ -37,6 +38,8 @@
 		4D1ECFF3291263D2009CBA22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D1ECFF5291263D2009CBA22 /* uCopy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uCopy.entitlements; sourceTree = "<group>"; };
 		4D6124FB29324ABE0044E63C /* SnippetEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetEditView.swift; sourceTree = "<group>"; };
+		4D6125052934A19E0044E63C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4D6125072934A1A20044E63C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4D805D8729321A25009F4F52 /* SnippetSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetSettingsView.swift; sourceTree = "<group>"; };
 		4DCB340F291D233B00E3B3CA /* uCopy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uCopy.xcdatamodel; sourceTree = "<group>"; };
 		4DCB3411291D23F300E3B3CA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		4D1ECFE0291263D1009CBA22 = {
 			isa = PBXGroup;
 			children = (
+				4D6125062934A19E0044E63C /* Localizable.strings */,
 				4D1ECFEB291263D1009CBA22 /* uCopy */,
 				4D1ECFEA291263D1009CBA22 /* Products */,
 			);
@@ -164,6 +168,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 4D1ECFE0291263D1009CBA22;
 			packageReferences = (
@@ -185,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D1ECFF4291263D2009CBA22 /* Preview Assets.xcassets in Resources */,
+				4D6125042934A19E0044E63C /* Localizable.strings in Resources */,
 				4D1ECFF1291263D2009CBA22 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +223,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4D6125062934A19E0044E63C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D6125052934A19E0044E63C /* zh-Hans */,
+				4D6125072934A1A20044E63C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4D1ECFF6291263D2009CBA22 /* Debug */ = {

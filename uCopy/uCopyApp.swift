@@ -30,7 +30,7 @@ struct uCopyApp: App {
             Button("Perferences...") {
                 NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
                 for window in NSApplication.shared.windows {
-                    if window.title == "General" || window.title == "Type" || window.title == "Advanced" {
+                    if window.title == "General" || window.title == "Snippet" || window.title == "About" {
                         window.level = .floating
                     }
                 }
