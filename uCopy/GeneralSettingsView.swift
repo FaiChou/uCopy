@@ -8,6 +8,7 @@
 import SwiftUI
 import AVFoundation
 import LaunchAtLogin
+import KeyboardShortcuts
 
 struct GeneralSettingsView: View {
     @AppStorage("uCopy.sound")
@@ -16,6 +17,11 @@ struct GeneralSettingsView: View {
         Form {
             Section {
                 LaunchAtLogin.Toggle("Launch at login")
+            }
+            .padding(.bottom)
+            Section {
+                KeyboardShortcuts.Recorder("History Shortcuts:", name: .historyShortcuts)
+                KeyboardShortcuts.Recorder("Snippet Shortcuts:", name: .snippetShortcuts)
             }
             .padding(.bottom)
             Section {
@@ -41,4 +47,11 @@ enum SoundNames: String, CaseIterable, Identifiable {
      */
     case none, basso, blow, bottle, frog, funk, glass, hero, morse, ping, pop, purr, sosumi, submarine, tink
     var id: Self { self }
+}
+
+extension KeyboardShortcuts.Name {
+    static let historyShortcuts = Self("historyShortcuts",
+                                       default: .init(.c, modifiers: [.command, .option]))
+    static let snippetShortcuts = Self("snippetShortcuts",
+                                       default: .init(.x, modifiers: [.command, .option]))
 }

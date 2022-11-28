@@ -13,6 +13,7 @@
 		4D6124FC29324ABE0044E63C /* SnippetEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6124FB29324ABE0044E63C /* SnippetEditView.swift */; };
 		4D6124FF293490CC0044E63C /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 4D6124FE293490CC0044E63C /* LaunchAtLogin */; };
 		4D6125042934A19E0044E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D6125062934A19E0044E63C /* Localizable.strings */; };
+		4D61250A2934AAB10044E63C /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 4D6125092934AAB10044E63C /* KeyboardShortcuts */; };
 		4D805D8829321A25009F4F52 /* SnippetSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D805D8729321A25009F4F52 /* SnippetSettingsView.swift */; };
 		4DCB3410291D233B00E3B3CA /* uCopy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB340E291D233B00E3B3CA /* uCopy.xcdatamodeld */; };
 		4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3411291D23F300E3B3CA /* DataController.swift */; };
@@ -24,11 +25,9 @@
 		4DCB3443292B757C00E3B3CA /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3442292B757C00E3B3CA /* UtilityExtensions.swift */; };
 		4DCB3445292DC67500E3B3CA /* PasteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3444292DC67500E3B3CA /* PasteService.swift */; };
 		4DCB3447292E0F1000E3B3CA /* AccessibilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3446292E0F1000E3B3CA /* AccessibilityService.swift */; };
-		4DCB3449292E12A500E3B3CA /* HotKeyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3448292E12A500E3B3CA /* HotKeyService.swift */; };
 		4DCB344B292E211500E3B3CA /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB344A292E211500E3B3CA /* CoreDataHelper.swift */; };
 		4DCB344D292F1EFE00E3B3CA /* MenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB344C292F1EFE00E3B3CA /* MenuManager.swift */; };
 		4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9C4A52915FD0E002D6A34 /* Main.swift */; };
-		4DE9C4AB2916B345002D6A34 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 4DE9C4AA2916B345002D6A34 /* HotKey */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +50,6 @@
 		4DCB3442292B757C00E3B3CA /* UtilityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
 		4DCB3444292DC67500E3B3CA /* PasteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteService.swift; sourceTree = "<group>"; };
 		4DCB3446292E0F1000E3B3CA /* AccessibilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityService.swift; sourceTree = "<group>"; };
-		4DCB3448292E12A500E3B3CA /* HotKeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyService.swift; sourceTree = "<group>"; };
 		4DCB344A292E211500E3B3CA /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		4DCB344C292F1EFE00E3B3CA /* MenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuManager.swift; sourceTree = "<group>"; };
 		4DE9C4A52915FD0E002D6A34 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
@@ -63,7 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D6124FF293490CC0044E63C /* LaunchAtLogin in Frameworks */,
-				4DE9C4AB2916B345002D6A34 /* HotKey in Frameworks */,
+				4D61250A2934AAB10044E63C /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +100,6 @@
 				4DCB3436291E345C00E3B3CA /* HistoryView.swift */,
 				4DCB344A292E211500E3B3CA /* CoreDataHelper.swift */,
 				4DCB3446292E0F1000E3B3CA /* AccessibilityService.swift */,
-				4DCB3448292E12A500E3B3CA /* HotKeyService.swift */,
 				4DCB3442292B757C00E3B3CA /* UtilityExtensions.swift */,
 				4DCB3411291D23F300E3B3CA /* DataController.swift */,
 				4DCB340E291D233B00E3B3CA /* uCopy.xcdatamodeld */,
@@ -139,8 +136,8 @@
 			);
 			name = uCopy;
 			packageProductDependencies = (
-				4DE9C4AA2916B345002D6A34 /* HotKey */,
 				4D6124FE293490CC0044E63C /* LaunchAtLogin */,
+				4D6125092934AAB10044E63C /* KeyboardShortcuts */,
 			);
 			productName = uCopy;
 			productReference = 4D1ECFE9291263D1009CBA22 /* uCopy.app */;
@@ -172,8 +169,8 @@
 			);
 			mainGroup = 4D1ECFE0291263D1009CBA22;
 			packageReferences = (
-				4DE9C4A92916B345002D6A34 /* XCRemoteSwiftPackageReference "HotKey" */,
 				4D6124FD293490CC0044E63C /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
+				4D6125082934AAB10044E63C /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 			);
 			productRefGroup = 4D1ECFEA291263D1009CBA22 /* Products */;
 			projectDirPath = "";
@@ -207,7 +204,6 @@
 				4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */,
 				4D805D8829321A25009F4F52 /* SnippetSettingsView.swift in Sources */,
 				4DCB3447292E0F1000E3B3CA /* AccessibilityService.swift in Sources */,
-				4DCB3449292E12A500E3B3CA /* HotKeyService.swift in Sources */,
 				4DCB343F2924B4C600E3B3CA /* AboutSettingsView.swift in Sources */,
 				4DCB3445292DC67500E3B3CA /* PasteService.swift in Sources */,
 				4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */,
@@ -442,11 +438,11 @@
 				kind = branch;
 			};
 		};
-		4DE9C4A92916B345002D6A34 /* XCRemoteSwiftPackageReference "HotKey" */ = {
+		4D6125082934AAB10044E63C /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/soffes/HotKey";
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
 			requirement = {
-				branch = master;
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -458,10 +454,10 @@
 			package = 4D6124FD293490CC0044E63C /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
 			productName = LaunchAtLogin;
 		};
-		4DE9C4AA2916B345002D6A34 /* HotKey */ = {
+		4D6125092934AAB10044E63C /* KeyboardShortcuts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4DE9C4A92916B345002D6A34 /* XCRemoteSwiftPackageReference "HotKey" */;
-			productName = HotKey;
+			package = 4D6125082934AAB10044E63C /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
 		};
 /* End XCSwiftPackageProductDependency section */
 

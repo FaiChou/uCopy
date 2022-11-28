@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import AVFoundation
+import KeyboardShortcuts
 
 @main
 struct uCopyApp: App {
@@ -44,7 +45,12 @@ struct uCopyApp: App {
         .onChange(of: scenePhase) { phase in
             if phase == .active {
                 AccessibilityService.isAccessibilityEnabled(isPrompt: true)
-                HotKeyService.setup()
+                KeyboardShortcuts.onKeyDown(for: .historyShortcuts) {
+                    MenuManager.popupHistoryMenu()
+                }
+                KeyboardShortcuts.onKeyDown(for: .snippetShortcuts) {
+                    MenuManager.popupSnippetMenu()
+                }
                 MenuManager.moc = dataController.container.viewContext
                 self.pasteboardMonitorCancellable = pub.sink { n in
                     guard let data = n.userInfo?["data"] as? PasteboardData else {
