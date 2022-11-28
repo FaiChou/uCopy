@@ -7,15 +7,22 @@
 
 import SwiftUI
 import AVFoundation
+import LaunchAtLogin
 
 struct GeneralSettingsView: View {
     @AppStorage("uCopy.sound")
     private var selectedSound: SoundNames = .blow
     var body: some View {
         Form {
-            Picker("Sound", selection: $selectedSound) {
-                ForEach(SoundNames.allCases) { sound in
-                    Text(sound.rawValue.capitalized)
+            Section {
+                LaunchAtLogin.Toggle("Launch at login")
+            }
+            .padding(.bottom)
+            Section {
+                Picker("Sound", selection: $selectedSound) {
+                    ForEach(SoundNames.allCases) { sound in
+                        Text(sound.rawValue.capitalized)
+                    }
                 }
             }
         }

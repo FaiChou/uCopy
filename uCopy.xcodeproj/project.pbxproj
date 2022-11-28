@@ -11,6 +11,7 @@
 		4D1ECFF1291263D2009CBA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1ECFF0291263D2009CBA22 /* Assets.xcassets */; };
 		4D1ECFF4291263D2009CBA22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D1ECFF3291263D2009CBA22 /* Preview Assets.xcassets */; };
 		4D6124FC29324ABE0044E63C /* SnippetEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6124FB29324ABE0044E63C /* SnippetEditView.swift */; };
+		4D6124FF293490CC0044E63C /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 4D6124FE293490CC0044E63C /* LaunchAtLogin */; };
 		4D805D8829321A25009F4F52 /* SnippetSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D805D8729321A25009F4F52 /* SnippetSettingsView.swift */; };
 		4DCB3410291D233B00E3B3CA /* uCopy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB340E291D233B00E3B3CA /* uCopy.xcdatamodeld */; };
 		4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3411291D23F300E3B3CA /* DataController.swift */; };
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6124FF293490CC0044E63C /* LaunchAtLogin in Frameworks */,
 				4DE9C4AB2916B345002D6A34 /* HotKey in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +136,7 @@
 			name = uCopy;
 			packageProductDependencies = (
 				4DE9C4AA2916B345002D6A34 /* HotKey */,
+				4D6124FE293490CC0044E63C /* LaunchAtLogin */,
 			);
 			productName = uCopy;
 			productReference = 4D1ECFE9291263D1009CBA22 /* uCopy.app */;
@@ -165,6 +168,7 @@
 			mainGroup = 4D1ECFE0291263D1009CBA22;
 			packageReferences = (
 				4DE9C4A92916B345002D6A34 /* XCRemoteSwiftPackageReference "HotKey" */,
+				4D6124FD293490CC0044E63C /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = 4D1ECFEA291263D1009CBA22 /* Products */;
 			projectDirPath = "";
@@ -412,6 +416,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4D6124FD293490CC0044E63C /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		4DE9C4A92916B345002D6A34 /* XCRemoteSwiftPackageReference "HotKey" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/soffes/HotKey";
@@ -423,6 +435,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4D6124FE293490CC0044E63C /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D6124FD293490CC0044E63C /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
+		};
 		4DE9C4AA2916B345002D6A34 /* HotKey */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4DE9C4A92916B345002D6A34 /* XCRemoteSwiftPackageReference "HotKey" */;
