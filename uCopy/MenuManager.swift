@@ -23,6 +23,7 @@ class MenuManager {
             historyResults = try moc?.fetch(CoreDataHelper.historyFetchRequestWithLimit(size: 20))
             for (index, item) in historyResults!.enumerated() {
                 let string = item.title ?? ""
+                let tooltipString = "\(string)\n\n" + "\(item.source!) \(item.createDate!)"
                 let title = "\(index+1). \(string.trimingLeadingSpaces().trunc(length: 30))"
                 let key = index < 9 ? String(index+1) : ""
                 let menuItem = NSMenuItem(
@@ -32,7 +33,7 @@ class MenuManager {
                 )
                 menuItem.target = MenuManager.self
                 menuItem.representedObject = item
-                menuItem.toolTip = string // we should use the original formateed string
+                menuItem.toolTip = tooltipString // we should use the original formateed string
                 historyMenu!.addItem(menuItem)
             }
         } catch {
