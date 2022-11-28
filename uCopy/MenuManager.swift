@@ -50,6 +50,7 @@ class MenuManager {
             snippetResults = try moc?.fetch(CoreDataHelper.snippetFetchRequest())
             for (index, item) in snippetResults!.enumerated() {
                 let string = item.name ?? ""
+                let content = item.content ?? ""
                 let title = "\(index+1). \(string.trimingLeadingSpaces().trunc(length: 30))"
                 let key = index < 9 ? String(index+1) : ""
                 let menuItem = NSMenuItem(
@@ -59,7 +60,7 @@ class MenuManager {
                 )
                 menuItem.target = MenuManager.self
                 menuItem.representedObject = item
-                menuItem.toolTip = string // we should use the original formateed string
+                menuItem.toolTip = content // we should use the original formateed string
                 snippetMenu!.addItem(menuItem)
             }
         } catch {
