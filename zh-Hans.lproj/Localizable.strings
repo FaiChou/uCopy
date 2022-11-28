@@ -19,6 +19,8 @@
 "Sound" = "提示音";
 "Unknown" = "未知";
 "Clear History" = "清除历史";
+"History Shortcuts:" = "粘贴板快捷键:";
+"Snippet Shortcuts:" = "短语片段快捷键:";
 
 "Please allow Accessibility" = "请打开 Accessibility";
 
