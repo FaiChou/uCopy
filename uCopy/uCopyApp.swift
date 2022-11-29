@@ -25,7 +25,7 @@ struct uCopyApp: App {
             SettingsView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
-        MenuBarExtra("Menu Bar", systemImage: "swift") {
+        MenuBarExtra("Menu Bar", systemImage: "clipboard") {
             HistoryView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
             Button("Perferences...") {
