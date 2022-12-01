@@ -40,9 +40,14 @@ struct HistoryView: View {
     }
     func paste(_ item: History) {
         let string = item.title ?? ""
-        PasteService.writeToPasteboard(with: string)
-        PasteService.paste()
+        if item.type == PasteboardType.image.rawValue {
+            PasteService.writeToPasteboard(with: item.imageData!)
+        } else if item.type == PasteboardType.string.rawValue {
+            PasteService.writeToPasteboard(with: string)
+        }
         context.delete(item)
+        PasteService.paste()
         try? context.save()
     }
 }
+

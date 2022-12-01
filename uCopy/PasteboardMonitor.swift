@@ -7,14 +7,23 @@
 
 import AppKit
 
+enum PasteboardType: String {
+    case string
+    case image
+}
+
 class PasteboardData {
     let string: String
     let createDate: Date
     let source: String?
-    init(string: String, createDate: Date, source: String?) {
+    let type: PasteboardType
+    let imageData: Data?
+    init(string: String, createDate: Date, source: String?, type: PasteboardType, imageData: Data?) {
         self.string = string
         self.createDate = createDate
         self.source = source
+        self.type = type
+        self.imageData = imageData
     }
 }
 
@@ -35,12 +44,30 @@ class PasteboardMonitor {
         timer.invalidate()
     }
     func postNotification() {
-        guard let string = self.pasteboard.string(forType: NSPasteboard.PasteboardType.string) else {
+        let frontmostApp = NSWorkspace.shared.frontmostApplication
+        if let imageData = self.pasteboard.data(forType: NSPasteboard.PasteboardType.tiff)
+            ?? self.pasteboard.data(forType: NSPasteboard.PasteboardType.png) {
+            let string = self.pasteboard.string(forType: NSPasteboard.PasteboardType.string)
+            let data = PasteboardData(
+                string: string ?? "Image",
+                createDate: Date.now,
+                source: frontmostApp?.localizedName,
+                type: .image,
+                imageData: imageData
+            )
+            NotificationCenter.default.post(name: .NSPasteboardDidChange, object: self.pasteboard, userInfo: ["data": data])
             return
         }
-        let frontmostApp = NSWorkspace.shared.frontmostApplication
-        let data = PasteboardData(string: string, createDate: Date.now, source: frontmostApp?.localizedName)
-        NotificationCenter.default.post(name: .NSPasteboardDidChange, object: self.pasteboard, userInfo: ["data": data])
+        if let string = self.pasteboard.string(forType: NSPasteboard.PasteboardType.string) {
+            let data = PasteboardData(
+                string: string,
+                createDate: Date.now,
+                source: frontmostApp?.localizedName,
+                type: .string,
+                imageData: nil
+            )
+            NotificationCenter.default.post(name: .NSPasteboardDidChange, object: self.pasteboard, userInfo: ["data": data])
+        }
     }
 }
 

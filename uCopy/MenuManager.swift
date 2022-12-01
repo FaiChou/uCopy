@@ -72,14 +72,17 @@ class MenuManager {
     static func paste(_ sender: NSMenuItem) {
         if let h = sender.representedObject as? History {
             let string = h.title ?? ""
-            PasteService.writeToPasteboard(with: string)
-            PasteService.paste()
+            if h.type == PasteboardType.image.rawValue {
+                PasteService.writeToPasteboard(with: h.imageData!)
+            } else if h.type == PasteboardType.string.rawValue {
+                PasteService.writeToPasteboard(with: string)
+            }
             moc?.delete(h)
+            PasteService.paste()
         } else if let s = sender.representedObject as? Snippet {
             let string = s.content ?? ""
             PasteService.writeToPasteboard(with: string)
             PasteService.paste()
         }
-        try? moc?.save()
     }
 }

@@ -26,4 +26,9 @@ class PasteService {
         pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
         pasteboard.setString(string, forType: .string)
     }
+    static func writeToPasteboard(with imageData: Data) {
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([NSPasteboard.PasteboardType.tiff], owner: nil)
+        pasteboard.setData(imageData, forType: NSPasteboard.PasteboardType.tiff)
+    }
 }
