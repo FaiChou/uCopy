@@ -23,9 +23,10 @@
 "Snippet Shortcuts:" = "短语片段快捷键:";
 "Max saved:" = "最多存储:";
 "Excess items will be deleted automatically" = "超出的部分会被自动删除";
-
+"Yet Another Pasteboard Tool" = "Yet Another Pasteboard Tool";
+"Clipboard history & Snippet support" = "历史粘贴板 & 快捷短语";
+"Customized shortcuts" = "自定义快捷键";
+"Sound alert when copy" = "复制提示音";
 "Please allow Accessibility" = "请打开 Accessibility";
-
 "To do this action please allow Accessibility in Security Privacy preferences located in System Preferences" = "请在设置中打开 Accessibility 权限";
-
 "Open System Preferences" = "打开设置";

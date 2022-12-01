@@ -12,5 +12,5 @@
 - [ ] 图片支持
 - [ ] 扩充历史粘贴板数量(二级菜单)
 - [x] 自动清理超出的历史数据
-- [ ] 引导页
+- [x] 引导页
 - [x] Snippet 排序功能 (由于 CoreData 没有类似 [move(fromOffsets:toOffset:)](https://developer.apple.com/documentation/Swift/MutableCollection/move(fromOffsets:toOffset:)) 接口, 需要增加一个 `order` 字段, 根据此字段和创建日期进行排序)
