@@ -20,21 +20,60 @@ class MenuManager {
         labelItem.isEnabled = false
         historyMenu!.addItem(labelItem)
         do {
-            historyResults = try moc?.fetch(CoreDataHelper.historyFetchRequestWithLimit(size: 20))
-            for (index, item) in historyResults!.enumerated() {
-                let string = item.title ?? ""
-                let tooltipString = "\(string)\n\n" + "\(item.source!) \(item.createDate!)"
-                let title = "\(index+1). \(string.trimingLeadingSpaces().trunc(length: 30))"
-                let key = index < 9 ? String(index+1) : ""
-                let menuItem = NSMenuItem(
-                    title: title,
-                    action: #selector(paste),
-                    keyEquivalent: key
-                )
-                menuItem.target = MenuManager.self
-                menuItem.representedObject = item
-                menuItem.toolTip = tooltipString // we should use the original formateed string
-                historyMenu!.addItem(menuItem)
+            historyResults = try moc?.fetch(CoreDataHelper.historyFetchRequestWithLimit(size: DEFAULT_MENU_PAGE_SIZE))
+            if historyResults!.count > DEFAULT_MENU_BAR_PAGE_SIZE {
+                // we need split them to submenu
+                let prefixResults = historyResults![0..<DEFAULT_MENU_BAR_PAGE_SIZE]
+                let suffixResults = historyResults![DEFAULT_MENU_BAR_PAGE_SIZE...]
+                for (index, item) in prefixResults.enumerated() {
+                    let string = item.title ?? ""
+                    let tooltipString = "\(string)\n\n" + "\(item.source!) \(item.createDate!)"
+                    let title = "\(index+1). \(string.trimingLeadingSpaces().trunc(length: 30))"
+                    let key = index < 9 ? String(index+1) : ""
+                    let menuItem = NSMenuItem(
+                        title: title,
+                        action: #selector(paste),
+                        keyEquivalent: key
+                    )
+                    menuItem.target = MenuManager.self
+                    menuItem.representedObject = item
+                    menuItem.toolTip = tooltipString // we should use the original formateed string
+                    historyMenu!.addItem(menuItem)
+                }
+                let subMenuItem = NSMenuItem(title: "More", action: nil, keyEquivalent: "")
+                historyMenu!.addItem(subMenuItem)
+                let subMenu = NSMenu(title: "Submenu")
+                subMenuItem.submenu = subMenu
+                for (index, item) in suffixResults.enumerated() {
+                    let string = item.title ?? ""
+                    let tooltipString = "\(string)\n\n" + "\(item.source!) \(item.createDate!)"
+                    let title = "\(index+1). \(string.trimingLeadingSpaces().trunc(length: 30))"
+                    let menuItem = NSMenuItem(
+                        title: title,
+                        action: #selector(paste),
+                        keyEquivalent: ""
+                    )
+                    menuItem.target = MenuManager.self
+                    menuItem.representedObject = item
+                    menuItem.toolTip = tooltipString // we should use the original formateed string
+                    subMenu.addItem(menuItem)
+                }
+            } else {
+                for (index, item) in historyResults!.enumerated() {
+                    let string = item.title ?? ""
+                    let tooltipString = "\(string)\n\n" + "\(item.source!) \(item.createDate!)"
+                    let title = "\(index+1). \(string.trimingLeadingSpaces().trunc(length: 30))"
+                    let key = index < 9 ? String(index+1) : ""
+                    let menuItem = NSMenuItem(
+                        title: title,
+                        action: #selector(paste),
+                        keyEquivalent: key
+                    )
+                    menuItem.target = MenuManager.self
+                    menuItem.representedObject = item
+                    menuItem.toolTip = tooltipString // we should use the original formateed string
+                    historyMenu!.addItem(menuItem)
+                }
             }
         } catch {
             print("Something wrong!")

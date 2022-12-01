@@ -15,6 +15,7 @@
 		4D6125042934A19E0044E63C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4D6125062934A19E0044E63C /* Localizable.strings */; };
 		4D61250A2934AAB10044E63C /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 4D6125092934AAB10044E63C /* KeyboardShortcuts */; };
 		4D805D8829321A25009F4F52 /* SnippetSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D805D8729321A25009F4F52 /* SnippetSettingsView.swift */; };
+		4D8263952938DDA7008A858F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8263942938DDA7008A858F /* Constants.swift */; };
 		4DCB3410291D233B00E3B3CA /* uCopy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB340E291D233B00E3B3CA /* uCopy.xcdatamodeld */; };
 		4DCB3412291D23F300E3B3CA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3411291D23F300E3B3CA /* DataController.swift */; };
 		4DCB3437291E345C00E3B3CA /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB3436291E345C00E3B3CA /* HistoryView.swift */; };
@@ -41,6 +42,7 @@
 		4D6125072934A1A20044E63C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4D61250B2934BAD10044E63C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4D805D8729321A25009F4F52 /* SnippetSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetSettingsView.swift; sourceTree = "<group>"; };
+		4D8263942938DDA7008A858F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4DCB340F291D233B00E3B3CA /* uCopy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = uCopy.xcdatamodel; sourceTree = "<group>"; };
 		4DCB3411291D23F300E3B3CA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		4DCB3436291E345C00E3B3CA /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				4DCB343C2924B4BA00E3B3CA /* GeneralSettingsView.swift */,
 				4DCB3436291E345C00E3B3CA /* HistoryView.swift */,
 				4DCB344A292E211500E3B3CA /* CoreDataHelper.swift */,
+				4D8263942938DDA7008A858F /* Constants.swift */,
 				4DCB3446292E0F1000E3B3CA /* AccessibilityService.swift */,
 				4DCB3442292B757C00E3B3CA /* UtilityExtensions.swift */,
 				4DCB3411291D23F300E3B3CA /* DataController.swift */,
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DCB344D292F1EFE00E3B3CA /* MenuManager.swift in Sources */,
+				4D8263952938DDA7008A858F /* Constants.swift in Sources */,
 				4DCB343B292228FF00E3B3CA /* PasteboardMonitor.swift in Sources */,
 				4DE9C4A62915FD0E002D6A34 /* Main.swift in Sources */,
 				4D805D8829321A25009F4F52 /* SnippetSettingsView.swift in Sources */,

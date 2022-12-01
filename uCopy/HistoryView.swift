@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct HistoryView: View {
-    @FetchRequest(fetchRequest: CoreDataHelper.historyFetchRequestWithLimit(size: 20)) var history: FetchedResults<History>
+    @FetchRequest(fetchRequest: CoreDataHelper.historyFetchRequestWithLimit(size: DEFAULT_MENU_BAR_PAGE_SIZE)) var history: FetchedResults<History>
     @Environment(\.managedObjectContext) var context
     @State private var refreshID = UUID()
 
