@@ -69,7 +69,7 @@ struct uCopyApp: App {
                     item.source = data.source
                     item.createDate = data.createDate
                     item.type = data.type.rawValue
-                    item.imageData = data.imageData
+                    item.data = data.data
                     do {
                         // if arrives the max length, we should remove the overflow items
                         let historyResults = try context.fetch(CoreDataHelper.historyFetchRequestWithLimit(size: 0))

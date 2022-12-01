@@ -73,9 +73,11 @@ class MenuManager {
         if let h = sender.representedObject as? History {
             let string = h.title ?? ""
             if h.type == PasteboardType.image.rawValue {
-                PasteService.writeToPasteboard(with: h.imageData!)
+                PasteService.writeToPasteboard(with: h.data!, forType: .tiff)
             } else if h.type == PasteboardType.string.rawValue {
                 PasteService.writeToPasteboard(with: string)
+            } else if h.type == PasteboardType.fileUrl.rawValue {
+                PasteService.writeToPasteboard(with: h.data!, forType: .fileURL)
             }
             moc?.delete(h)
             PasteService.paste()

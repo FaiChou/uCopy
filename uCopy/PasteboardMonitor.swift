@@ -10,6 +10,7 @@ import AppKit
 enum PasteboardType: String {
     case string
     case image
+    case fileUrl
 }
 
 class PasteboardData {
@@ -17,13 +18,13 @@ class PasteboardData {
     let createDate: Date
     let source: String?
     let type: PasteboardType
-    let imageData: Data?
-    init(string: String, createDate: Date, source: String?, type: PasteboardType, imageData: Data?) {
+    let data: Data?
+    init(string: String, createDate: Date, source: String?, type: PasteboardType, data: Data?) {
         self.string = string
         self.createDate = createDate
         self.source = source
         self.type = type
-        self.imageData = imageData
+        self.data = data
     }
 }
 
@@ -45,26 +46,46 @@ class PasteboardMonitor {
     }
     func postNotification() {
         let frontmostApp = NSWorkspace.shared.frontmostApplication
+        if self.pasteboard.pasteboardItems!.count > 1 {
+            // not support multiple files right now
+            return
+        }
+//        print(self.pasteboard.availableType(from: self.pasteboard.types ?? []))
+        if let fileData = self.pasteboard.data(forType: NSPasteboard.PasteboardType.fileURL) {
+            let string = self.pasteboard.string(forType: NSPasteboard.PasteboardType.string)
+            let data = PasteboardData(
+                string: string ?? "File",
+                createDate: Date.now,
+                source: frontmostApp?.localizedName,
+                type: .fileUrl,
+                data: fileData
+            )
+            NotificationCenter.default.post(name: .NSPasteboardDidChange, object: self.pasteboard, userInfo: ["data": data])
+            return
+        }
+        
         if let imageData = self.pasteboard.data(forType: NSPasteboard.PasteboardType.tiff)
-            ?? self.pasteboard.data(forType: NSPasteboard.PasteboardType.png) {
+            ?? self.pasteboard.data(forType: NSPasteboard.PasteboardType.png)
+            ?? self.pasteboard.data(forType: NSPasteboard.PasteboardType.fileURL) {
             let string = self.pasteboard.string(forType: NSPasteboard.PasteboardType.string)
             let data = PasteboardData(
                 string: string ?? "Image",
                 createDate: Date.now,
                 source: frontmostApp?.localizedName,
                 type: .image,
-                imageData: imageData
+                data: imageData
             )
             NotificationCenter.default.post(name: .NSPasteboardDidChange, object: self.pasteboard, userInfo: ["data": data])
             return
         }
+
         if let string = self.pasteboard.string(forType: NSPasteboard.PasteboardType.string) {
             let data = PasteboardData(
                 string: string,
                 createDate: Date.now,
                 source: frontmostApp?.localizedName,
                 type: .string,
-                imageData: nil
+                data: nil
             )
             NotificationCenter.default.post(name: .NSPasteboardDidChange, object: self.pasteboard, userInfo: ["data": data])
         }

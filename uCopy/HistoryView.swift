@@ -41,9 +41,11 @@ struct HistoryView: View {
     func paste(_ item: History) {
         let string = item.title ?? ""
         if item.type == PasteboardType.image.rawValue {
-            PasteService.writeToPasteboard(with: item.imageData!)
+            PasteService.writeToPasteboard(with: item.data!, forType: .tiff)
         } else if item.type == PasteboardType.string.rawValue {
             PasteService.writeToPasteboard(with: string)
+        } else if item.type == PasteboardType.fileUrl.rawValue {
+            PasteService.writeToPasteboard(with: item.data!, forType: .fileURL)
         }
         context.delete(item)
         PasteService.paste()
