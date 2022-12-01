@@ -35,6 +35,7 @@ struct GeneralSettingsView: View {
                     }
                 }
             }
+            .padding(.bottom)
             Section {
                 HStack {
                     TextField("Max saved:", text: $maxSavedLength)
@@ -57,6 +58,7 @@ struct GeneralSettingsView: View {
                     }
                 }
             }
+            .padding(.bottom)
         }
         .padding(20)
         .frame(width: 350, height: 100)
