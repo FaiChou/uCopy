@@ -16,10 +16,13 @@ struct SnippetSettingsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List(snippets, id: \.self, selection: $selection) { item in
-                    NavigationLink(item.name!) {
-                        SnippetEditView(item: item)
+                List(selection: $selection) {
+                    ForEach(snippets, id: \.self) { item in
+                        NavigationLink(item.name!) {
+                            SnippetEditView(item: item)
+                        }
                     }
+                    .onMove(perform: move)
                 }
                 .listStyle(.inset(alternatesRowBackgrounds: true))
                 HStack {
@@ -45,6 +48,14 @@ struct SnippetSettingsView: View {
             Text("Pick a node")
         }
     }
+    func move(from source: IndexSet, to destination: Int) {
+        var revisedItems: [Snippet] = snippets.map{ $0 }
+        revisedItems.move(fromOffsets: source, toOffset: destination)
+        for reverseIndex in stride(from: revisedItems.count - 1, through: 0, by: -1) {
+            revisedItems[reverseIndex].order = Int16(reverseIndex)
+        }
+        try? context.save()
+    }
     func delete(item: Snippet) {
         context.delete(item)
         try? context.save()
@@ -56,6 +67,7 @@ struct SnippetSettingsView: View {
         item.name = name
         item.content = content
         item.createDate = Date.now
+        item.order = Int16(snippets.count)
         try? context.save()
         return item
     }

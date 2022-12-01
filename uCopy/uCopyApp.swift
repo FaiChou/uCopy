@@ -17,6 +17,11 @@ struct uCopyApp: App {
     @Environment(\.scenePhase) var scenePhase
     @AppStorage("uCopy.sound")
     private var sound: SoundNames = .blow
+    private var maxSavedLength: Int {
+        Int(self.maxSaved) ?? 20
+    }
+    @AppStorage("uCopy.maxSavedLength")
+    private var maxSaved = "20"
     @State var pasteboardMonitorCancellable: AnyCancellable?
     @StateObject private var dataController = DataController()
     var body: some Scene {
@@ -64,6 +69,13 @@ struct uCopyApp: App {
                     item.source = data.source
                     item.createDate = data.createDate
                     do {
+                        // if arrives the max length, we should remove the overflow items
+                        let historyResults = try context.fetch(CoreDataHelper.historyFetchRequestWithLimit(size: 0))
+                        for (index, item) in historyResults.enumerated() {
+                            if index >= maxSavedLength {
+                                context.delete(item)
+                            }
+                        }
                         try context.save()
                     } catch {
                         let nserror = error as NSError

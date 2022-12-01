@@ -9,10 +9,14 @@ import SwiftUI
 import AVFoundation
 import LaunchAtLogin
 import KeyboardShortcuts
+import Combine
 
 struct GeneralSettingsView: View {
     @AppStorage("uCopy.sound")
     private var selectedSound: SoundNames = .blow
+    @AppStorage("uCopy.maxSavedLength")
+    private var maxSavedLength = "20"
+    @State private var showingPopover = false
     var body: some View {
         Form {
             Section {
@@ -28,6 +32,28 @@ struct GeneralSettingsView: View {
                 Picker("Sound", selection: $selectedSound) {
                     ForEach(SoundNames.allCases) { sound in
                         Text(sound.rawValue.capitalized)
+                    }
+                }
+            }
+            Section {
+                HStack {
+                    TextField("Max saved:", text: $maxSavedLength)
+                        .onReceive(Just(maxSavedLength)) { newValue in
+                            let filtered = newValue.filter { "0123456789".contains($0) }
+                            if filtered != newValue {
+                                self.maxSavedLength = filtered
+                            }
+                        }
+                    Button {
+                        showingPopover = true
+                    } label: {
+                        Image(systemName: "questionmark")
+                    }
+                    .buttonStyle(.plain)
+                    .popover(isPresented: $showingPopover) {
+                        Text("Excess items will be deleted automatically")
+                            .font(.headline)
+                            .padding()
                     }
                 }
             }

@@ -21,6 +21,8 @@
 "Clear History" = "清除历史";
 "History Shortcuts:" = "粘贴板快捷键:";
 "Snippet Shortcuts:" = "短语片段快捷键:";
+"Max saved:" = "最多存储:";
+"Excess items will be deleted automatically" = "超出的部分会被自动删除";
 
 "Please allow Accessibility" = "请打开 Accessibility";
 

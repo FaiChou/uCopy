@@ -14,12 +14,15 @@ class CoreDataHelper {
         r.sortDescriptors = [
             NSSortDescriptor(keyPath: \History.createDate, ascending: false)
         ]
-        r.fetchLimit = size
+        if size > 0 {        
+            r.fetchLimit = size
+        }
         return r
     }
     static func snippetFetchRequest() -> NSFetchRequest<Snippet> {
         let r: NSFetchRequest<Snippet> = Snippet.fetchRequest()
         r.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Snippet.order, ascending: true),
             NSSortDescriptor(keyPath: \Snippet.createDate, ascending: true)
         ]
         return r
