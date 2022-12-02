@@ -1,0 +1,6 @@
+language: swift
+branches:
+  only:
+    - main
+script:
+  - swift --version
