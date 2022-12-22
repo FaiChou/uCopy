@@ -67,3 +67,6 @@ Github [releases](https://github.com/FaiChou/uCopy/releases) are also the same v
 
 ## Buy me a coffee ☕️
 
+[支付宝](https://github.com/FaiChou/uCopy/blob/main/oss/ali.JPG?raw=true)
+
+[微信](https://github.com/FaiChou/uCopy/blob/main/oss/wechat.JPG?raw=true)
