@@ -67,6 +67,11 @@ Github [releases](https://github.com/FaiChou/uCopy/releases) are also the same v
 
 ## Buy me a coffee ☕️
 
-[支付宝](https://github.com/FaiChou/uCopy/blob/main/oss/ali.JPG?raw=true)
+- [支付宝](https://github.com/FaiChou/uCopy/blob/main/oss/ali.JPG?raw=true)
+- [微信](https://github.com/FaiChou/uCopy/blob/main/oss/wechat.JPG?raw=true)
 
-[微信](https://github.com/FaiChou/uCopy/blob/main/oss/wechat.JPG?raw=true)
+## Contact Me
+
+- [Email](mailto:faichou.zh@gmail.com)
+- [Telegram](https:t.me/faichou)
+- <a href="tencent://message/?uin=95301527&Site=&Menu=yes">QQ</a>
