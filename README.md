@@ -73,5 +73,5 @@ Github [releases](https://github.com/FaiChou/uCopy/releases) are also the same v
 ## Contact Me
 
 - [Email](mailto:faichou.zh@gmail.com)
-- [Telegram](https:t.me/faichou)
+- [Telegram](https://t.me/faichou)
 - [QQ](tencent://message/?uin=95301527&Site=&Menu=yes)
