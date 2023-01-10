@@ -29,6 +29,23 @@
 Github [releases](https://github.com/FaiChou/uCopy/releases) are also the same version to the Mac App Store.
 
 
+#### 3. Homebrew
+
+
+##### install via brew
+
+```sh
+$ brew tap bigwig-club/brew
+$ brew install bigwig-club/brew/ucopy --cask
+```
+
+##### uninstall via brew
+
+
+```sh
+$ brew uninstall bigwig-club/brew/ucopy --zap
+```
+
 ## Development
 
 #### Environment
