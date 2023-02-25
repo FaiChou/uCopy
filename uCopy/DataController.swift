@@ -17,7 +17,7 @@ class DataController: ObservableObject {
             }
         }
     }
-    func saveContext () {
+    func saveContext() {
         let context = container.viewContext
         if context.hasChanges {
             do {

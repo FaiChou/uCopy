@@ -130,11 +130,3 @@ struct Page4: View {
     }
 }
 
-struct Page2_Preview: PreviewProvider {
-    static var previews: some View {
-        Page1()
-        Page2()
-        Page3()
-        Page4()
-    }
-}
