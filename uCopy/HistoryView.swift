@@ -35,6 +35,7 @@ struct HistoryView: View {
                 let fetchRequest: NSFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
                 let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
                 try? context.executeAndMergeChanges(using: batchDeleteRequest)
+                try? context.save()
             }
         }
     }

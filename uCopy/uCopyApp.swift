@@ -33,14 +33,21 @@ struct uCopyApp: App {
         MenuBarExtra("Menu Bar", systemImage: "clipboard") {
             HistoryView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
-            Button("Perferences...") {
-                NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
-                for window in NSApplication.shared.windows {
-                    if window.title == "General" || window.title == "Snippet" || window.title == "About" {
-                        window.level = .floating
-                    }
+            if #available(macOS 14, *) {
+                SettingsLink {
+                    Text("Perferences...")
                 }
-            }.keyboardShortcut(",")
+                .keyboardShortcut(",")
+            } else {
+                Button("Perferences...") {
+                    NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                    for window in NSApplication.shared.windows {
+                        if window.title == "General" || window.title == "Snippet" || window.title == "About" {
+                            window.level = .floating
+                        }
+                    }
+                }.keyboardShortcut(",")
+            }
             Divider()
             Button("Quit") {
                 monitor.terminate()
